@@ -1,7 +1,8 @@
 import { useState } from "react";
 
 import Navbar from "./components/Navbar";
-import { SelectedPage } from "./common/enums";
+
+import { SelectedPage } from "./common/enums/enums";
 
 function App() {
   const [selectedPage, setSelectedPage] = useState<SelectedPage>(

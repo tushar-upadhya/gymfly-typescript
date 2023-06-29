@@ -1,4 +1,5 @@
-import { SelectedPage } from "@/common/enums";
+import { SelectedPage } from "@/common/enums/enums";
+
 import AnchorLink from "react-anchor-link-smooth-scroll";
 
 type Props = {
@@ -8,20 +9,21 @@ type Props = {
 };
 
 const Link = ({ page, selectedPage, setSelectedPage }: Props) => {
-  const lowerCasePage = page.toLowerCase().replace(/ /g, "") as SelectedPage;
+  const lowerCasePage = page
+    .toLocaleUpperCase() // Convert page to uppercase
+    .replace(/ /g, "") as SelectedPage; // Remove spaces and assert type as SelectedPage
+  // The lowerCasePage now represents the transformed and type-casted value of page
 
   return (
-    <div>
-      <AnchorLink
-        className={`${
-          selectedPage === lowerCasePage ? "text-primary-500" : ""
-        } transition duration-500 hover:text-primary-300`}
-        href={`#${lowerCasePage}`}
-        onClick={() => setSelectedPage(lowerCasePage)}
-      >
-        {page}
-      </AnchorLink>
-    </div>
+    <AnchorLink
+      className={`${
+        selectedPage === lowerCasePage ? "text-primary-500" : ""
+      } transition duration-500 hover:text-primary-300`}
+      href={`#${lowerCasePage}`}
+      onClick={() => setSelectedPage(lowerCasePage)}
+    >
+      {page}
+    </AnchorLink>
   );
 };
 
