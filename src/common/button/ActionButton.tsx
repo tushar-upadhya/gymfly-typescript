@@ -1,10 +1,12 @@
 import AnchorLink from "react-anchor-link-smooth-scroll";
+
 import { SelectedPage } from "../enums/enums";
 
 type Props = {
   children: React.ReactNode;
   setSelectedPage: (value: SelectedPage) => void;
 };
+
 const ActionButton = ({ children, setSelectedPage }: Props) => {
   return (
     <AnchorLink
