@@ -14,26 +14,22 @@ export default {
         "secondary-400": "#FFCD5B",
         "secondary-500": "#FFC132",
       },
-
       backgroundImage: (theme) => ({
         "gradient-yellowred":
           "linear-gradient(90deg, #FF616A 0%, #FFC837 100%)",
-        "mobile-home": "url('./src/assets/HomePageGraphic.png')",
+        "mobile-home": "url('./assets/HomePageGraphic.png')",
       }),
-
       fontFamily: {
         dmsans: ["DM Sans", "sans-serif"],
         montserrat: ["Montserrat", "sans-serif"],
       },
-
       content: {
-        evolveText: "url('/src/assets/EvolveText.png')",
-        abstractWaves: "url('/src/assets/AbstractWaves.png')",
-        sparkles: "url('/src/assets/Sparkles.png')",
-        circles: "url('/src/assets/Circles.png')",
+        evolveText: "url('./assets/EvolveText.png')",
+        abstractWaves: "url('./assets/AbstractWaves.png')",
+        sparkles: "url('./assets/Sparkles.png')",
+        circles: "url('./assets/Circles.png')",
       },
     },
-
     screens: {
       xs: "480px",
       sm: "768px",
