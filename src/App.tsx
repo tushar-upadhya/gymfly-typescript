@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import Navbar from "./components/Navbar";
 
@@ -9,9 +9,31 @@ function App() {
     SelectedPage.Home
   );
 
+  const [scrollNavbar, setScrollNavbar] = useState<boolean>(true);
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY === 0) {
+        setScrollNavbar(true);
+        setSelectedPage(SelectedPage.Home);
+      } else {
+        setScrollNavbar(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <div className="app bg-gray-20">
-      <Navbar selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
+      <Navbar
+        scrollNavbar={scrollNavbar}
+        selectedPage={selectedPage}
+        setSelectedPage={setSelectedPage}
+      />
     </div>
   );
 }

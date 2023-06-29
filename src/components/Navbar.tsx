@@ -15,18 +15,22 @@ import ActionButton from "../common/button/ActionButton";
 type Props = {
   selectedPage: SelectedPage;
   setSelectedPage: (value: SelectedPage) => void;
+  scrollNavbar: boolean;
 };
 
-const Navbar = ({ selectedPage, setSelectedPage }: Props) => {
+const Navbar = ({ scrollNavbar, selectedPage, setSelectedPage }: Props) => {
   const FLEX_BETWEEN = "flex item-center justify-between";
 
   const IS_ABOVED_MEDIUM_SCREENS = useMediaQuery("(min-width:1060px)");
 
   const [handleToggle, setHandleToggle] = useState(false);
 
+  const navbarBackground = scrollNavbar ? "" : "bg-primary-100 drop-shadow";
   return (
     <nav>
-      <div className={`${FLEX_BETWEEN} fixed top-0 z-30 w-full py-6`}>
+      <div
+        className={` ${navbarBackground} ${FLEX_BETWEEN} fixed top-0 z-30 w-full py-6`}
+      >
         <div className={`${FLEX_BETWEEN} mx-auto w-5/6`}>
           <div className={`${FLEX_BETWEEN} w-full gap-16`}>
             {/* left */}
