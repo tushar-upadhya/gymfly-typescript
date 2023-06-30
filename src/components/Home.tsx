@@ -12,6 +12,8 @@ import FortuneImage from "../assets/SponsorFortune.png";
 
 import AnchorLink from "react-anchor-link-smooth-scroll";
 
+import { motion } from "framer-motion";
+
 type Props = {
   setSelectedPage: (value: SelectedPage) => void;
 };
@@ -29,7 +31,17 @@ const Home = ({ setSelectedPage }: Props) => {
         <div className="md:basis-3/3 z-10 mt-32">
           {/* heading */}
 
-          <div className="md:-mt-20">
+          <motion.div
+            className="md:-mt-20"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 1.5 }}
+            variants={{
+              hidden: { opacity: 0, x: -100 },
+              visible: { opacity: 1, x: 100 },
+            }}
+          >
             <div className="relative">
               <div className="before:absolute before:-left-20 before:-top-20 before:z-[-1] before:content-evolveText">
                 <img src={HomeImage} alt="HomeImage" />
@@ -40,10 +52,20 @@ const Home = ({ setSelectedPage }: Props) => {
               Studios to get the Body Shapes That you Dream of.. Get Your Dream
               Body Now.
             </p>
-          </div>
+          </motion.div>
           {/* action */}
 
-          <div className="mt-8 flex items-center gap-8 ">
+          <motion.div
+            className="mt-8 flex items-center gap-8 "
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 1.8 }}
+            variants={{
+              hidden: { opacity: 0, x: -100 },
+              visible: { opacity: 1, x: 100 },
+            }}
+          >
             <ActionButton setSelectedPage={setSelectedPage}>
               Join NOW
             </ActionButton>
@@ -54,7 +76,7 @@ const Home = ({ setSelectedPage }: Props) => {
             >
               <p>Learn More</p>
             </AnchorLink>
-          </div>
+          </motion.div>
         </div>
         {/* image */}
 
