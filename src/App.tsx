@@ -5,6 +5,7 @@ import Navbar from "./components/header/Navbar";
 import { SelectedPage } from "./common/enums/enums";
 import Home from "./components/Home";
 import Benefits from "./components/benefit/Benefits";
+import Classes from "./components/ourClasses/Classes";
 
 function App() {
   const [selectedPage, setSelectedPage] = useState<SelectedPage>(
@@ -40,6 +41,8 @@ function App() {
       <Home setSelectedPage={setSelectedPage} />
 
       <Benefits setSelectedPage={setSelectedPage} />
+
+      <Classes setSelectedPage={setSelectedPage} />
     </div>
   );
 }
