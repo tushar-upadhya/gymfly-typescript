@@ -4,7 +4,7 @@ import Navbar from "./components/header/Navbar";
 
 import { SelectedPage } from "./common/enums/enums";
 import Home from "./components/Home";
-import Benefits from "./components/Benefits";
+import Benefits from "./components/benefit/Benefits";
 
 function App() {
   const [selectedPage, setSelectedPage] = useState<SelectedPage>(
