@@ -2,9 +2,7 @@ import logo from "../assets/Logo.png";
 
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 
-type Props = {};
-
-const Footer = (props: Props) => {
+const Footer = () => {
   return (
     <footer className="lg:py-4 flex items-center justify-center bg-primary-100 py-2">
       <div className="lg:flex-row flex flex-col items-center justify-between gap-y-6 ">
