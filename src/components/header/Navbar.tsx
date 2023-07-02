@@ -84,7 +84,6 @@ const Navbar = ({ scrollNavbar, selectedPage, setSelectedPage }: Props) => {
       {!IS_ABOVED_MEDIUM_SCREENS && isMenuToggled && (
         <div className="fixed bottom-0 right-0 z-40 h-full w-[300px] bg-primary-100 drop-shadow-xl">
           {/* CLOSE ICON */}
-
           <div className="flex justify-end p-12">
             <button onClick={() => setIsMenuToggled(!isMenuToggled)}>
               <XMarkIcon className="h-6 w-6 text-gray-400" />

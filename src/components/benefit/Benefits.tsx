@@ -54,34 +54,33 @@ const Benefits = ({ setSelectedPage }: Props) => {
       <motion.div
         onViewportEnter={() => setSelectedPage(SelectedPage.Benefits)}
       >
-        {/* header */}
+        {/* HEADER */}
         <motion.div
+          className="md:my-5 md:w-3/5"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: 1.8 }}
+          transition={{ duration: 0.5 }}
           variants={{
-            hidden: { opacity: 0, x: -100 },
-            visible: { opacity: 1, x: 100 },
+            hidden: { opacity: 0, x: -50 },
+            visible: { opacity: 1, x: 0 },
           }}
-          className="md:my-5 md:w-3/5"
         >
-          <HText>More Than Just Gym</HText>
-
+          <HText>MORE THAN JUST GYM.</HText>
           <p className="my-5 text-sm">
             We provide world class fitness equipment, trainers and classes to
             get you to your ultimate fitness goals with ease. We provide true
             care into each and every member.
           </p>
         </motion.div>
-        {/* benefits */}
 
+        {/* BENEFITS */}
         <motion.div
+          className="mt-5 items-center justify-between gap-8 md:flex"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.5 }}
           variants={container}
-          className="mt-5 items-center justify-between gap-8 md:flex"
         >
           {benefits.map((benefit: BenefitType) => (
             <Benefit
@@ -94,43 +93,42 @@ const Benefits = ({ setSelectedPage }: Props) => {
           ))}
         </motion.div>
 
-        {/* graphic & description */}
+        {/* GRAPHICS AND DESCRIPTION */}
         <div className="mt-16 items-center justify-between gap-20 md:mt-28 md:flex">
-          {/* img */}
+          {/* GRAPHIC */}
           <img className="mx-auto" src={benefitImage} alt="benefitImage" />
 
-          {/* description */}
-
+          {/* DESCRIPTION */}
           <div>
-            {/* title */}
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.5 }}
-              transition={{ duration: 1.8 }}
-              variants={{
-                hidden: { opacity: 0, x: 100 },
-                visible: { opacity: 1, x: 0 },
-              }}
-            >
+            {/* TITLE */}
+            <div className="relative">
               <div className="before:absolute before:-left-20 before:-top-20 before:z-[1] before:content-abstractWaves">
-                <div>
+                <motion.div
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.5 }}
+                  transition={{ duration: 0.5 }}
+                  variants={{
+                    hidden: { opacity: 0, x: 50 },
+                    visible: { opacity: 1, x: 0 },
+                  }}
+                >
                   <HText>
-                    Millions of happy member getting{" "}
+                    MILLIONS OF HAPPY MEMBERS GETTING{" "}
                     <span className="text-primary-500">FIT</span>
                   </HText>
-                </div>
+                </motion.div>
               </div>
-            </motion.div>
-            {/* description */}
+            </div>
 
+            {/* description */}
             <motion.div
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.5 }}
-              transition={{ duration: 1.8 }}
+              transition={{ delay: 0.2, duration: 0.5 }}
               variants={{
-                hidden: { opacity: 0, x: -50 },
+                hidden: { opacity: 0, x: 50 },
                 visible: { opacity: 1, x: 0 },
               }}
             >
@@ -142,7 +140,6 @@ const Benefits = ({ setSelectedPage }: Props) => {
                 tellus. Ullamcorper arcu id pretium sapien proin integer nisl.
                 Felis orci diam odio.
               </p>
-
               <p className="mb-5">
                 Fringilla a sed at suspendisse ut enim volutpat. Rhoncus vel est
                 tellus quam porttitor. Mauris velit euismod elementum arcu neque
@@ -150,12 +147,12 @@ const Benefits = ({ setSelectedPage }: Props) => {
                 enim mattis odio in risus nunc.
               </p>
             </motion.div>
-            {/* button */}
 
+            {/* BUTTON */}
             <div className="relative mt-16">
               <div className="before:absolute before:-bottom-20 before:right-40 before:z-[-1] before:content-sparkles">
                 <ActionButton setSelectedPage={setSelectedPage}>
-                  JOIN NOW
+                  Join Now
                 </ActionButton>
               </div>
             </div>
