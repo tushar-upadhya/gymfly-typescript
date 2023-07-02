@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 
-import Navbar from "./components/header/Navbar";
-
 import { SelectedPage } from "./common/enums/enums";
+
+import Navbar from "./components/header/Navbar";
 import Home from "./components/Home";
 import Benefits from "./components/benefit/Benefits";
 import Classes from "./components/ourClasses/Classes";
+import ContactUs from "./components/ContactUs";
 
 function App() {
   const [selectedPage, setSelectedPage] = useState<SelectedPage>(
@@ -43,6 +44,8 @@ function App() {
       <Benefits setSelectedPage={setSelectedPage} />
 
       <Classes setSelectedPage={setSelectedPage} />
+
+      <ContactUs setSelectedPage={setSelectedPage} />
     </div>
   );
 }
