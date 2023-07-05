@@ -24,14 +24,14 @@ const Footer = () => {
         <div className="flex gap-5">
           <a
             className="flex h-10 w-10 items-center justify-center rounded-full text-2xl  transition hover:text-[#5A5A5A] "
-            href="https://tusharupadhyay.vercel.app/"
+            href="https://github.com/tushar-upadhya/gymfly-typescript"
           >
             <AiFillGithub />
           </a>
 
           <a
             className="flex h-10 w-10 items-center justify-center rounded-full text-2xl  transition hover:text-[#5A5A5A]"
-            href="https://tusharupadhyay.vercel.app/"
+            href="https://www.linkedin.com/in/tushar-upadhyay-54029b135/"
           >
             <AiFillLinkedin />
           </a>
